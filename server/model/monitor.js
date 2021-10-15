@@ -531,12 +531,12 @@ class Monitor extends BeanModel {
 
             let text;
             if (bean.status === UP) {
-                text = "✅ Up";
+                statusIcon = "✔ Up";
             } else {
-                text = "🔴 Down";
+                statusLabel = "✘ Down";
             }
 
-            let msg = `[${monitor.name}] [${text}] ${bean.msg}`;
+            let msg = `${statusIcon} Monitor **${monitor.name}** is ${statusLabel}:\n${bean.msg}`;
 
             for (let notification of notificationList) {
                 try {
